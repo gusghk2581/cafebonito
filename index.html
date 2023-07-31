@@ -6,7 +6,7 @@
     <title>카페보니또</title>
     <link rel="stylesheet" href="./css/reset.css">
     <!-- 슬라이드css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <link rel="stylesheet" href="./css/cdn.jsdelivr.net_bxslider_4.2.12_jquery.bxslider.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     <script>
@@ -122,6 +122,12 @@
             padding-left:20px;
             border-bottom:1px solid #ddd;
         }
+        #slide h2{
+            display:none;
+        }
+        #slide .img-box{
+            width:100%;
+        }
 
         /* 800px이상 */
         @media (min-width:800px){
@@ -231,12 +237,16 @@
         </header>
         <section id="main">
             <section class="sec" id="slide">
-                <div class="container">
-                    <h2>슬라이드</h2>
-                    <div class="slider">
-                        <div>I am a slide.</div>
-                        <div>I am another slide.</div>
-                        <div>나도 슬라이드</div>
+                <h2>슬라이드</h2>
+                <div class="slider">
+                    <div class="slide01">
+                        <div class="img-box"><img src="./images/full-slide01.jpg" alt="슬라이드01"></div>
+                    </div>
+                    <div class="slide02">
+                        <div class="img-box"><img src="./images/full-slide02.jpg" alt="슬라이드01"></div>
+                    </div>
+                    <div class="slide03">
+                        <div class="img-box"><img src="./images/full-slide03.jpg" alt="슬라이드01"></div>
                     </div>
                 </div>
             </section>
