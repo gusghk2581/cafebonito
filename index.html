@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>카페보니또</title>
     <link rel="stylesheet" href="./css/reset.css">
-    <link rel="shortcut icon" href="./logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
     <!-- 슬라이드css -->
     <link rel="stylesheet" href="./css/cdn.jsdelivr.net_bxslider_4.2.12_jquery.bxslider.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -29,25 +29,19 @@
         .g-container{
             display:grid;
         }
-        .f-container{
-            display:flex;
-        }
         #wrap{
             margin:0 auto;
             max-width:2000px;
             overflow:hidden;
-        }
-        #header{
-            background:#00381e;
         }
         h1{
             display:none;
         }
         #certified{
             position:relative;
+            background:#00381e;
         }
-        #certified .container{
-            display:grid;
+        #certified .g-container{
             grid-template-columns:repeat(4,1fr);
             color:#fff;
         }
@@ -61,10 +55,8 @@
             right:0;
             top:50%;
             background:#fff;
-            
         }
         #certified .logo-box{
-            padding:0;
             grid-column:1/5;
             grid-row:1/2;
             height:50px;
@@ -82,7 +74,6 @@
             padding:12px 0;
             grid-column:1/5;
             grid-row:2/3;
-            /* height:50px; */
             display:flex;
             justify-content:center;
             align-items:center;
@@ -93,12 +84,10 @@
         #certified .lang-box .img-box{
             width:35px;
         }
-        #header-main .container{
+        #header-main .g-container{
             height:90px;
-            display:grid;
             grid-template-columns:repeat(4,1fr);
             align-items:center;
-            background:#fff; 
             position:relative;
         }
         #header-main h2{
@@ -108,7 +97,6 @@
         #header-main .btn-nav{
             grid-column:4/5;
             justify-self:end;
-
             cursor:pointer;
         }
         #header-main .btn-nav span{
@@ -120,7 +108,8 @@
             text-indent:-9999px;
             margin:6px 0;
         }
-        #header-main .btn-nav::before,#header-main .btn-nav::after{
+        #header-main .btn-nav::before,
+        #header-main .btn-nav::after{
             display:block;
             content:'';
             width:26px;
@@ -145,7 +134,7 @@
             flex-flow:column nowrap;
         }
         #header-main nav li{
-            padding-left:20px;
+            padding:0 0 8px 20px;
             border-bottom:1px solid #ddd;
         }
         #slide{
@@ -189,11 +178,9 @@
         #start-up h2{
             display:none;
         }
-        #start-up .container{
-            display:grid;
+        #start-up .g-container{
             grid-template-columns:repeat(4,1fr);
             gap:30px 20px;
-            justify-content:center;
         }
         #start-up article{
             grid-column:1/5;
@@ -218,9 +205,8 @@
         #cafe-info h2,#cafe-info h4{
             display:none;
         }
-        #cafe-info .container{
+        #cafe-info .g-container{
             padding:40px 20px 40px;
-            display:grid;
             grid-template-columns:repeat(4,1fr);
         }
         #cafe-info h3{
@@ -244,13 +230,10 @@
         } 
         #news{
             text-align:center;
-            padding:50px 0;
+            padding-bottom:50px;
         }
         #news h2{
             display:none;
-        }
-        #news .container{
-            display:grid;
         }
         #news h3{
             display:flex;
@@ -336,7 +319,7 @@
         }
         #menu h3{
             font-size:25px;
-            margin-bottom:30px;
+            margin-bottom:40px;
         }
         #menu p{
             display:none;
@@ -355,6 +338,9 @@
         }
         #menu button:hover{
             background:#f15a23;
+        }
+        #franchise{
+            margin-bottom:50px;
         }
         #franchise h2{
             font-weight:700;
@@ -396,6 +382,9 @@
             font-size:20px;
             padding-bottom:60px;
         }
+        #franchise article:last-child{
+            padding-bottom:0;
+        }
         #franchise article h4{
             display:none;
         }
@@ -407,7 +396,8 @@
             color:#fff;
         }
         #footer .container{
-            display:grid;
+            align-items:center;
+            column-gap:24px;
             padding:30px 20px;
         }
         #footer .img-box{
@@ -432,17 +422,17 @@
             #certified::after{
                 display:none;
             }
-            #certified .container{
+            #certified .g-container{
                 grid-template-columns:repeat(8,1fr);
             }   
             #certified .logo-box{
-                display:flex;
                 justify-content:flex-start;
             }
             #certified .lang-box{
                 grid-column:5/9;
                 grid-row:1/2;
                 justify-content:flex-end;
+                padding:0;
             }
             #header-main h2{
                 width:350px;
@@ -456,17 +446,18 @@
             #start-up{
                 padding-bottom:60px;
             }
-            #start-up .container{
+            #start-up .g-container{
                 grid-template-columns:repeat(8,1fr);
                 column-gap:24px;
             }
-            #start-up article:nth-child(2),#start-up article:last-child{
+            #start-up article:nth-child(2),
+            #start-up article:last-child{
                 grid-column:5/9;
             }
             #cafe-info{
                 margin-bottom:60px;
             }
-            #cafe-info .container{
+            #cafe-info .g-container{
                 padding:50px 20px;
                 grid-template-columns:repeat(8,1fr);
             }
@@ -482,14 +473,20 @@
             }
             #cafe-info article:nth-child(3),#cafe-info article:last-child{
                 display:block;
-                grid-column:5/9;
             } 
+            #news{
+                padding-bottom:60px;
+            }
+            #news p{
+                font-size:18px;
+            }
             #menu{
                 height:390px;
                 margin-bottom:60px;
             }
             #menu h3{
                 font-size:40px;
+                margin-bottom:60px;
             }
             #menu p{
                 display:block;
@@ -498,6 +495,12 @@
                 font-size:20px;
                 width:120px;
                 height:50px;
+            }
+            #franchise{
+                margin-bottom:60px;
+            }
+            #franchise h2{
+                font-size:40px;
             }
             #franchise .g-container{
                 grid-template-columns:repeat(8,1fr);
@@ -514,9 +517,6 @@
             }
             #footer .container{
                 grid-template-columns:repeat(8,1fr);
-                column-gap:24px;
-                justify-content:center;
-                align-items:center;
             }
             #footer .img-box{
                 margin:0 auto;
@@ -534,7 +534,7 @@
             .container{
                 padding:0 30px;
             }
-            #certified .container{
+            #certified .g-container{
                 grid-template-columns:repeat(12,1fr);
             }
             #certified .logo-box{
@@ -557,9 +557,9 @@
                 display:none;
             }
             #header-main nav{
+                display:block;
                 grid-column:5/13;
                 justify-self:end;
-                display:block;
                 position:static;
                 background:transparent;
             }
@@ -567,7 +567,7 @@
                 flex-flow:row nowrap;
             }
             #header-main nav li{
-                padding-left:20px;
+                padding-bottom:0;
                 border-bottom:0;
             }
             #header-main nav li:first-child{
@@ -587,7 +587,7 @@
             #start-up{
                 padding-bottom:80px;
             }
-            #start-up .container{
+            #start-up .g-container{
                 grid-template-columns:repeat(12,1fr);
             }
             #start-up article{
@@ -608,7 +608,7 @@
             #cafe-info{
                 margin-bottom:80px;
             }
-            #cafe-info .container{
+            #cafe-info .g-container{
                 grid-template-columns:repeat(12,1fr);
             }
             #cafe-info h3{
@@ -617,6 +617,9 @@
             }
             #cafe-info .txt-box{
                 grid-column:4/13;
+            }
+            #news{
+                padding-bottom:80px;
             }
             #news .container{
                 grid-template-columns:repeat(12,1fr);
@@ -638,6 +641,9 @@
                 height:500px;
                 margin-bottom:80px;
             }
+            #franchise{
+                margin-bottom:60px;
+            }
             #franchise .g-container{
                 grid-template-columns:repeat(12,1fr);
             }
@@ -646,11 +652,16 @@
             }
             #franchise .grand-open{
                 grid-column:1/13;
-
+            }
+            #franchise .grand-open h3{
+                font-size:30px;
             }
             #franchise .grand-open .f-container{
-                flex-flow:row nowrap;
+                flex-flow:row;
                 justify-content:space-evenly;
+            }
+            #franchise article{
+                padding-bottom:0;
             }
         }
     </style>
@@ -660,10 +671,10 @@
         <header id="header">
             <h1>카페보니또</h1>
             <div id="certified">
-                <div class="container">
+                <div class="container g-container">
                     <div class="logo-box">
                         <div class="img-box">
-                            <img src="./images/ico-food.png" alt="HACCP인증로고">
+                            <a href="#"><img src="./images/ico-food.png" alt="HACCP인증로고"></a>
                         </div>
                         <P>카페보니또는 HACCP인증을 받은 원두를 사용합니다.</P>
                     </div>
@@ -676,25 +687,25 @@
                     </div>
                 </div> 
             </div>
-                <div id="header-main">
-                    <div class="container">
-                        <h2><a href="./index.html"><img src="./images/logo-txt01.png" alt="로고"></a></h2>
-                        <div class="btn-nav" onclick="showNav();">
-                            <span>내비버튼</span>
-                        </div>
-                        <nav>
-                            <ul>
-                                <li><a href="#">브랜드 소개</a></li>
-                                <li><a href="#">메뉴</a></li>
-                                <li><a href="#">멤버십카드</a></li>
-                                <li><a href="#">프랜차이즈</a></li>
-                                <li><a href="#">매장찾기</a></li>
-                                <li><a href="#">홍보</a></li>
-                                <li><a href="#">가맹점 전용</a></li>
-                            </ul>
-                        </nav>
-                    </div> 
-                </div>
+            <div id="header-main">
+                <div class="container g-container">
+                    <h2><a href="./index.html"><img src="./images/logo-txt01.png" alt="로고"></a></h2>
+                    <div class="btn-nav" onclick="showNav();">
+                        <span>내비버튼</span>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li><a href="#">브랜드 소개</a></li>
+                            <li><a href="#">메뉴</a></li>
+                            <li><a href="#">멤버십카드</a></li>
+                            <li><a href="#">프랜차이즈</a></li>
+                            <li><a href="#">매장찾기</a></li>
+                            <li><a href="#">홍보</a></li>
+                            <li><a href="#">가맹점 전용</a></li>
+                        </ul>
+                    </nav>
+                </div> 
+            </div>
         </header>
         <section class="sec" id="slide">
                 <h2>슬라이드</h2>
@@ -702,24 +713,24 @@
                     <div class="slide slider01">
                         <div class="content">
                             <h3>-caffe BONITO-</h3>
-                            <P>맛있는 커피와 베이커리</P>
-                            <P>카페보니또는 정통 유러피안 베니커리와 정성담긴 커피를 매일 아침 준비합니다.</P>
+                            <P>고소한 원두로 만든 커피</P>
+                            <P>카페보니또는 정성담긴 커피를 매일 아침 준비합니다.</P>
                         </div>
                         <div class="img-box"><img src="./images/full-slide01.jpg" alt="슬라이드01"></div>
                     </div>
                     <div class="slide slider02">
                         <div class="content">
                             <h3>-caffe BONITO-</h3>
-                            <P>맛있는 커피와 베이커리</P>
-                            <P>카페보니또는 정통 유러피안 베니커리와 정성담긴 커피를 매일 아침 준비합니다.</P>
+                            <P>맛있는 베이커리</P>
+                            <P>카페보니또는 정통 유러피안 베이커리를 매일 아침 준비합니다.</P>
                         </div>
                         <div class="img-box"><img src="./images/full-slide02.jpg" alt="슬라이드01"></div>
                     </div>
                     <div class="slide slider03">
                         <div class="content">
                             <h3>-caffe BONITO-</h3>
-                            <P>맛있는 커피와 베이커리</P>
-                            <P>카페보니또는 정통 유러피안 베니커리와 정성담긴 커피를 매일 아침 준비합니다.</P>
+                            <P>카페보니또의 브런치</P>
+                            <P>간단한 브런치 메뉴를 카페보니또에서 만나보세요</P>
                         </div>
                         <div class="img-box"><img src="./images/full-slide03.jpg" alt="슬라이드01"></div>
                     </div>
@@ -727,7 +738,7 @@
         </section>
         <section class="sec" id="start-up">
                 <h2>카페보니또 창업안내</h2>
-                <div class="container">
+                <div class="container g-container">
                     <article>
                         <div class="img-box">
                             <img src="./images/startup-info01.png" alt="브랜드혜택아이콘">
@@ -760,7 +771,7 @@
         </section>
         <section class="sec" id="cafe-info">
                 <h2>카페보니또 소개</h2>
-                <div class="container">
+                <div class="container g-container">
                     <h3>CaffeBONITO is...</h3>
                     <div class="txt-box">
                         <article>
@@ -784,7 +795,7 @@
         </section>
         <section class="sec" id="news">
                 <h2>news</h2>
-                <div class="container">
+                <div class="container g-container">
                     <article>
                         <h3><span>라인</span>Press room<span>라인</span></h3>
                         <iframe src="https://www.youtube.com/embed/XudkNhGv3bw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -864,7 +875,7 @@
                 </div>
         </section>
         <footer id="footer">
-            <div class="container">
+            <div class="container g-container">
                 <div class="img-box">
                     <a href="./index.html"><img src="./images/logo-white_02.png" alt="로고"></a>
                 </div>
@@ -893,15 +904,6 @@
         function active(self){
             self.classList.toggle('active');
         }
-        // showNav();
-
-
-
-        // $(function(){
-        //     $('.btn-nav').click(function(){
-        //         $('#header nav').slideToggle(1000);   
-        //     })
-        // })
     </script>
 </body>
 </html>
