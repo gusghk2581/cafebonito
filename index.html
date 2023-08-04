@@ -87,11 +87,10 @@
             left:0;
             right:0;
             top:0;
-            z-index:9999;
-            box-shadow:5px 5px 4px rgba(0,0,0,0.2);
+            z-index:1000;
+            box-shadow:0 5px 8px rgba(0,0,0,0.2);
         }
         #header-main .g-container{
-            height:90px;
             grid-template-columns:repeat(4,1fr);
             align-items:center;
             background:#fff;
@@ -169,7 +168,7 @@
             font-size:20px;
         }
         #slide .content p:first-of-type{
-            font-size:40px;
+            font-size:35px;
             padding-bottom:30px;
         }     
         #slide .img-box{
@@ -184,18 +183,15 @@
         }
         #start-up .g-container{
             grid-template-columns:repeat(4,1fr);
-            gap:30px 20px;
+            gap:45px 20px;
         }
         #start-up article{
             grid-column:1/5;
         }
         #start-up article h3{
             font-weight:700;
-            font-size:30px;
+            font-size:24px;
             padding-bottom:22px;
-        }
-        #start-up article p{
-            font-size:20px;
         }
         #start-up article .img-box{
             margin:0 auto 22px;
@@ -221,12 +217,12 @@
         }
         #cafe-info .txt-box{
             grid-column:1/5;
-            display:grid;
-            grid-template-columns:repeat(4,1fr);
-            gap:24px 30px;
+            display:flex;
+            flex-flow:row wrap;
+            gap:20px;
         }
         #cafe-info article{
-            grid-column:1/5;
+            width:calc(50% - 10px);
         }
         #cafe-info article:nth-child(3),#cafe-info article:last-child{
             display:none;
@@ -247,7 +243,7 @@
         }
         #news h3 span{
             display:inline-block;
-            width:35%;
+            width:23%;
             height:1px;
             background:#ccc;
             text-indent:-9999px;
@@ -281,6 +277,7 @@
         #news article:last-child .img-box p{
             color:#520194;
             font-size:12px;
+            padding-top:10px;
         }
         #news article:last-child img{
             display:block;
@@ -323,7 +320,7 @@
         }
         #menu h3{
             font-size:25px;
-            margin-bottom:40px;
+            margin-bottom:30px;
         }
         #menu p{
             display:none;
@@ -439,7 +436,7 @@
                 padding:0;
             }
             #header-main h2{
-                width:350px;
+                width:300px;
             }
             #slide .content h3{
                 font-size:40px;
@@ -470,10 +467,10 @@
             }
             #cafe-info .txt-box{
                 grid-column:1/9;
-                grid-template-columns:repeat(8,1fr);
+                gap:60px;
             }
-            #cafe-info article:nth-child(3){
-                grid-row:1/2;
+            #cafe-info article{
+                width:calc(50% - 30px);
             }
             #cafe-info article:nth-child(3),#cafe-info article:last-child{
                 display:block;
@@ -489,8 +486,8 @@
                 margin-bottom:60px;
             }
             #menu h3{
-                font-size:40px;
-                margin-bottom:60px;
+                font-size: 35px;
+                margin-bottom: 50px;
             }
             #menu p{
                 display:block;
@@ -577,15 +574,7 @@
             #header-main nav li:first-child{
                 padding-left:0;
             }
-            #slide .content h3{
-                font-size:60px;
-                padding-bottom:60px;
-            }
-            #slide .content p{
-                font-size:30px;
-            }
             #slide .content p:first-of-type{
-                font-size:60px;
                 padding-bottom:40px;
             }
             #start-up{
@@ -693,7 +682,7 @@
             </div>
             <div id="header-main">
                 <div class="container g-container">
-                    <h2><a href="./index.html"><img src="./images/logo-txt01.png" alt="로고"></a></h2>
+                    <h2><a href="./index.html"><img src="./images/logo-txt01.png.svg" alt="로고"></a></h2>
                     <div class="btn-nav" onclick="showNav();">
                         <span>내비버튼</span>
                     </div>
@@ -901,8 +890,8 @@
         let btnNav =document.querySelector('.btn-nav');
         let elNav = document.querySelector('#header-main nav');
         let navNum=1;
-        console.log(btnNav);
-        console.log(elNav);
+        // console.log(btnNav);
+        // console.log(elNav);
         function showNav(){
             if(navNum==1){
                 elNav.style.height='245px';                
@@ -913,7 +902,7 @@
         }
         // 헤더스크롤이벤트
         let _mainHeader = document.getElementById('header-main');
-        console.log(_mainHeader);
+        // console.log(_mainHeader);
         document.addEventListener('scroll',function(){
             let scroll = window.scrollY;
             if(scroll > 50){
@@ -926,6 +915,8 @@
         $(document).ready(function(){
             $(".slider").bxSlider();
         })
+        var offset = $('.slide01').offset();
+        $('.slide01').offset
     </script>
 </body>
 </html>
