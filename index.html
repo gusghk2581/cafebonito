@@ -12,11 +12,16 @@
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
         :root{
-            font-family: 'Noto Serif KR', serif;
+            font-family:'Noto Serif KR', serif;
             font-weight:400;
             font-size:18px;
             color:#222;
+        }
+        .KS-fonts{
+            font-family: 'Kaushan Script', cursive;
+            font-size:30px;
         }
         .container{
             padding:0 20px;
@@ -97,7 +102,7 @@
         }
         #header-main h2{
             grid-column:1/4;
-            width:210px;
+            padding:20px 0;
         }
         #header-main .btn-nav{
             grid-column:4/5;
@@ -155,8 +160,7 @@
             position:absolute;
             left:50%;
             top:50%;
-            transform:translate(-50%, -50%);
-            width:100%;
+            transform:translate(-50%,-50%);
         }
         #slide .content h3{
             font-weight:700;
@@ -170,9 +174,15 @@
         #slide .content p:first-of-type{
             font-size:35px;
             padding-bottom:30px;
-        }     
+        }
         #slide .img-box{
             width:100%;
+            height:274px;
+            overflow:hidden;
+        }
+        #slide img{
+            width:100%;
+            height:100%;
         }
         #start-up{
             text-align:center;
@@ -416,8 +426,6 @@
         #footer address li:nth-child(3) span{
             display:inline;
         }
-        
-
         /* 800px이상 */
         @media (min-width:800px){
             #certified::after{
@@ -443,6 +451,9 @@
             }
             #slide .content p{
                 display:block;
+            }
+            #slide .img-box{
+                height:350px;
             }
             #start-up{
                 padding-bottom:60px;
@@ -577,6 +588,9 @@
             #slide .content p:first-of-type{
                 padding-bottom:40px;
             }
+            #slide .img-box{
+                height:500px;
+            }
             #start-up{
                 padding-bottom:80px;
             }
@@ -682,7 +696,7 @@
             </div>
             <div id="header-main">
                 <div class="container g-container">
-                    <h2><a href="./index.html"><img src="./images/logo-txt01.svg" alt="로고"></a></h2>
+                    <h2 class="KS-fonts"><a href="./index.html">caffe BONITO</a></h2>
                     <div class="btn-nav" onclick="showNav();">
                         <span>내비버튼</span>
                     </div>
@@ -890,8 +904,6 @@
         let btnNav =document.querySelector('.btn-nav');
         let elNav = document.querySelector('#header-main nav');
         let navNum=1;
-        // console.log(btnNav);
-        // console.log(elNav);
         function showNav(){
             if(navNum==1){
                 elNav.style.height='245px';                
@@ -902,7 +914,6 @@
         }
         // 헤더스크롤이벤트
         let _mainHeader = document.getElementById('header-main');
-        // console.log(_mainHeader);
         document.addEventListener('scroll',function(){
             let scroll = window.scrollY;
             if(scroll > 50){
